@@ -1,0 +1,6 @@
+{
+  "name": "Akash VI Portfolio",
+  "description": "A premium personal developer portfolio website featuring a contribution-style activity grid animation revealing the name 'AKASH VI' as green pixel lettering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

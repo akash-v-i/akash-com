@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-brand-green-50: #eefdf2;
+  --color-brand-green-100: #d4f9dc;
+  --color-brand-green-200: #acf1bd;
+  --color-brand-green-300: #73e291;
+  --color-brand-green-400: #39cb62;
+  --color-brand-green-500: #26a641; /* Level 3 Standard */
+  --color-brand-green-600: #1a8230;
+  --color-brand-green-700: #146627;
+  --color-brand-green-800: #0e4429; /* Level 1 Deep Green */
+  --color-brand-green-900: #062b16;
+  --color-brand-green-950: #02170b;
+
+  --color-theme-bg: var(--bg-primary);
+  --color-theme-bg-sec: var(--bg-secondary);
+  --color-theme-card: var(--bg-card);
+  --color-theme-border: var(--border-primary);
+  --color-theme-border-sec: var(--border-secondary);
+  --color-theme-text: var(--text-primary);
+  --color-theme-text-sec: var(--text-secondary);
+  --color-theme-text-muted: var(--text-muted);
+
+  --color-theme-cell-0: var(--cell-0);
+  --color-theme-cell-0-border: var(--cell-0-border);
+  --color-theme-cell-0-hover: var(--cell-0-hover);
+  --color-theme-cell-1: var(--cell-1);
+  --color-theme-cell-2: var(--cell-2);
+  --color-theme-cell-3: var(--cell-3);
+  --color-theme-cell-4: var(--cell-4);
+}
+
+@layer base {
+  :root {
+    --bg-primary: #030303;
+    --bg-secondary: #070707;
+    --bg-card: #09090b;
+    --border-primary: #171717;
+    --border-secondary: #262626;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a3a3a3;
+    --text-muted: #525252;
+    --scrollbar-track: #080808;
+    --scrollbar-thumb: #1f1f1f;
+
+    --cell-0: #161b22;
+    --cell-0-border: rgba(255, 255, 255, 0.03);
+    --cell-0-hover: #21262d;
+    --cell-1: #0e4429;
+    --cell-2: #006d32;
+    --cell-3: #26a641;
+    --cell-4: #39dd53;
+  }
+
+  :root.light {
+    --bg-primary: #fcfcfc;
+    --bg-secondary: #f4f4f5;
+    --bg-card: #ffffff;
+    --border-primary: #e4e4e7;
+    --border-secondary: #d4d4d8;
+    --text-primary: #09090b;
+    --text-secondary: #4b5563;
+    --text-muted: #a1a1aa;
+    --scrollbar-track: #f4f4f5;
+    --scrollbar-thumb: #e4e4e7;
+
+    --cell-0: #ebedf0;
+    --cell-0-border: rgba(27, 31, 35, 0.06);
+    --cell-0-hover: #e1e4e8;
+    --cell-1: #9be9a8;
+    --cell-2: #40c463;
+    --cell-3: #30a14e;
+    --cell-4: #216e39;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Custom minimal scrollbar to match the high-end aesthetic */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a2a2a;
+  }
+}
+
+/* Premium Infinite Scrolling Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
